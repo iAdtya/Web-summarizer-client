@@ -11,9 +11,13 @@ const SummarizeWebpage = () => {
     const inputUrl = e.target[0].value;
     setLoading(true);
     axios
-      .post("https://web-summarizer-production.up.railway.app/summary", {
-        url: inputUrl,
-      })
+      .post(
+        // "http://13.201.10.229:5000/summary",
+        "http://localhost:5000/summary",
+        {
+          url: inputUrl,
+        }
+      )
       .then((response) => {
         console.log(response.data);
         setSummary(response.data.summary.content);
@@ -28,15 +32,31 @@ const SummarizeWebpage = () => {
 
   return (
     <>
-      <div className="mt-44">
+      <div className="mt-40 flex items-center justify-center">
+        <div className="text-center">
+          <div className="max-w-lg">
+            <h1 className="text-5xl font-bold text-accent">
+              Web-Summarize Bot!!
+            </h1>
+            <p className="py-6 text-white">
+              Web-Summarize is a bot which summarizes any website with the URL
+              by scraping the dom with puppeter and summarizing with the help of
+              gpt 3.5 turbo model!!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="mt-12">
         <form onSubmit={handlesubmit}>
           <input
             type="text"
             placeholder="Enter URL"
             className="input input-bordered input-warning w-full max-w-md"
-            // onChange={(e) => setUrl(e.target.value)}
+            required
           />
-          <button className="btn btn-active btn-primary ml-2">Summarize</button>
+          <button className="btn btn-active btn-primary text-black ml-2">
+            Summarize
+          </button>
         </form>
       </div>
       {/* card for summary */}
