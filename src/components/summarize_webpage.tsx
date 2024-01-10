@@ -11,7 +11,7 @@ const SummarizeWebpage = () => {
     const inputUrl = e.target[0].value;
     setLoading(true);
     axios
-      .post("https://web-summarizer-bot.onrender.com/summary", {
+      .post("https://gpt-bot-g3fo.onrender.com/summary", {
         url: inputUrl,
       })
       .then((response) => {
