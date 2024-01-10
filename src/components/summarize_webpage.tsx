@@ -12,8 +12,7 @@ const SummarizeWebpage = () => {
     setLoading(true);
     axios
       .post(
-        // "http://13.201.10.229:5000/summary",
-        "http://localhost:5000/summary",
+        "https://web-summarizer-production.up.railway.app/summary",
         {
           url: inputUrl,
         }
