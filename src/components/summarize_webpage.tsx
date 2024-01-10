@@ -11,12 +11,9 @@ const SummarizeWebpage = () => {
     const inputUrl = e.target[0].value;
     setLoading(true);
     axios
-      .post(
-        "https://web-summarizer-bot.onrender.com/summary",
-        {
-          url: inputUrl,
-        }
-      )
+      .post("https://web-summarizer-bot.onrender.com/summary", {
+        url: inputUrl,
+      })
       .then((response) => {
         console.log(response.data);
         setSummary(response.data.summary.content);
