@@ -11,7 +11,7 @@ const SummarizeWebpage = () => {
     const inputUrl = e.target[0].value;
     setLoading(true);
     axios
-      .post("http://13.201.10.229:5000/summary", {
+      .post("https://js-web-backend-production.up.railway.app/summary", {
         url: inputUrl,
       })
       .then((response) => {
