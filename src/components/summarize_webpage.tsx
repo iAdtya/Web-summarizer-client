@@ -12,7 +12,7 @@ const SummarizeWebpage = () => {
     setLoading(true);
     axios
       .post(
-        "https://web-summarizer-production.up.railway.app/summary",
+        "https://web-summarizer-bot.onrender.com/summary",
         {
           url: inputUrl,
         }
