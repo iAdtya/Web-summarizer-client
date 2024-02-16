@@ -50,6 +50,7 @@ const SummarizeWebpage = () => {
                   className="input input-bordered input-warning w-full max-w-md"
                   required
                   value={url}
+                  onChange={(e) => setUrl(e.target.value)}
                 />
                 <button className="btn btn-active btn-primary text-black ml-2">
                   Summarize
